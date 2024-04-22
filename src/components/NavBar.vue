@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sticky top-0 z-10">
     <header
       class="bg-white shadow flex justify-between items-stretch mb-8 px-8"
     >
@@ -13,10 +13,10 @@
           :to="{ name: nav.to }"
           v-for="(nav, i) in navs"
           :key="i"
-          class="inline-flex items-center px-2 h-full transition-colors hover:bg-purple-100 font-bold text-purple-800"
+          class="inline-flex items-center px-2 h-full transition-colors hover:bg-purple-100 text-purple-800"
         >
-          {{ nav.name }}</router-link
-        >
+          {{ nav.name }}
+        </router-link>
       </div>
     </header>
   </div>
