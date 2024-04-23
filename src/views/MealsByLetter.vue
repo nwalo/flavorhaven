@@ -4,7 +4,7 @@
       <h1 class="text-4xl font-black text-purple-900 my-4">
         Search Meal by Letter
       </h1>
-      <div class="flex justify-center gap-2 pt-10">
+      <div class="flex flex-wrap justify-center gap-2 pt-10">
         <router-link
           :to="{ name: 'letter', params: { letter } }"
           v-for="(letter, i) in letters"
