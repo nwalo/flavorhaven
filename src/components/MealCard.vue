@@ -1,5 +1,5 @@
 <template>
-  <div class="px-10">
+  <div class="px-0 sm:px-10">
     <div
       v-if="meals && meals.length > 0"
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 p-9 sm:px-0 gap-10"

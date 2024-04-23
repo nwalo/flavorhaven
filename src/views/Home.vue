@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="mx-10 max-w-[1000px]">
-      <h1 class="text-purple-900 font-black text-6xl max-w-[800px]">
+      <h1 class="text-purple-900 font-black text-4xl md:text-6xl max-w-[800px]">
         Welcome to Flavor Haven: Where Every Bite Tells a Story
       </h1>
-      <p class="text-2xl text-gray-500 py-5">
+      <p class="text-xl md:text-2xl text-gray-500 py-5">
         Your Passport to Culinary Adventures! Discover a world of tantalizing
         tastes and culinary delights with our curated collection of recipes,
         tips, and inspiration. Explore tantalizing recipes, and expert tips to

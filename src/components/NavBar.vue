@@ -60,14 +60,16 @@
         </div>
       </div>
     </div>
+    <pre class="hidden">{{ isOpen }}</pre>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, onUpdated, ref } from "vue";
 import Logo from "../assets/logo.png";
 import store from "../store";
 
+const isOpen = computed(() => store.state.isNavOpen);
 const isNavOpen = ref(store.state.isNavOpen);
 
 const logo = Logo;
@@ -87,6 +89,8 @@ const toggleNav = () => {
 
   store.dispatch("setIsNavOpen", isNavOpen.value);
 };
+
+onUpdated(() => (isNavOpen.value = isOpen.value));
 </script>
 
 <style>
