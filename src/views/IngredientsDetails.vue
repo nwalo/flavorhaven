@@ -1,6 +1,6 @@
 <template>
-  <div class="p-8">
-    <h1 class="text-4xl font-black text-purple-900 my-4">
+  <div class="py-8">
+    <h1 class="text-4xl px-8 font-black text-purple-900 my-4">
       Ingredients Details
     </h1>
 

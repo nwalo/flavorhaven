@@ -1,16 +1,18 @@
 <template>
-  <div class="px-8 py-0">
-    <h1 class="text-4xl font-black text-purple-900 my-4">
-      Search Meal by Name
-    </h1>
+  <div class="py-0">
+    <div class="px-8">
+      <h1 class="text-4xl font-black text-purple-900 my-4">
+        Search Meal by Name
+      </h1>
 
-    <input
-      type="text"
-      class="outline-none rounded border-1 border-purple-100 w-full py-4 hover:border-purple-400 focus:ring-purple-500 focus:border-purple-400"
-      placeholder="Search for meals"
-      v-model="keyword"
-      @change="searchMeals"
-    />
+      <input
+        type="text"
+        class="outline-none rounded border-1 border-purple-100 w-full py-4 hover:border-purple-400 focus:ring-purple-500 focus:border-purple-400"
+        placeholder="Search for meals"
+        v-model="keyword"
+        @change="searchMeals"
+      />
+    </div>
 
     <MealCard :meals="meals" />
   </div>
