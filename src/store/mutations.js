@@ -11,3 +11,7 @@ export function setMealByLetter(state, meals) {
 export function setMealByIngredient(state, meals) {
   state.mealByIngredient = meals;
 }
+
+export function setNavOpen(state, isOpen) {
+  state.isNavOpen = isOpen;
+}

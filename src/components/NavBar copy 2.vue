@@ -1,20 +1,16 @@
 <template>
-  <div class="sticky top-0 z-10">
+  <div>
     <div class="sticky top-0 z-10">
       <header class="bg-white shadow">
-        <div class="flex justify-between items-center px-8 py-1">
-          <router-link
-            to="/"
-            class="inline-flex items-center"
-            @click="closeNav"
-          >
+        <div class="flex justify-between items-center px-8 py-4">
+          <router-link to="/" class="inline-flex items-center">
             <img :src="logo" class="w-[180px]" alt="logo" />
           </router-link>
 
           <!-- Hamburger Menu -->
           <button
             @click="toggleNav"
-            class="block md:hidden p-2 focus:outline-none"
+            class="block sm:hidden p-2 focus:outline-none"
           >
             <svg
               class="w-6 h-6 text-purple-800"
@@ -33,43 +29,43 @@
           </button>
 
           <!-- Navigation Links -->
-          <div class="hidden md:block">
+          <div
+            :class="{ block: isNavOpen, hidden: !isNavOpen }"
+            class="sm:flex sm:items-center sm:space-x-4"
+          >
             <router-link
               v-for="(nav, i) in navs"
               :key="i"
               :to="{ name: nav.to }"
-              class="py-2 px-3 text-purple-800 transition-all hover:bg-purple-100 rounded"
+              class="py-2 px-[0] text-purple-800 hover:bg-purple-100 rounded"
               >{{ nav.name }}</router-link
             >
           </div>
         </div>
       </header>
     </div>
-    <div
+    <!-- <div
       :class="{ block: isNavOpen, hidden: !isNavOpen }"
-      class="flex md:hidden items-end flex-col absolute right-0"
+      class="flex items-end flex-col absolute right-0"
     >
       <div class="bg-white w-[300px] py-5">
         <div v-for="(nav, i) in navs" :key="i" class="py-2 px-5">
           <router-link
-            @click="closeNav"
             :to="{ name: nav.to }"
             class="py-2 px-2 text-purple-800 hover:bg-purple-100 rounded"
             >{{ nav.name }}</router-link
           >
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import Logo from "../assets/logo.png";
-import store from "../store";
 
-const isNavOpen = ref(store.state.isNavOpen);
-
+const isNavOpen = ref(false);
 const logo = Logo;
 const navs = [
   { name: "Search meals", to: "name" },
@@ -77,15 +73,8 @@ const navs = [
   { name: "Meals by ingredients", to: "ingredients" },
 ];
 
-const closeNav = () => {
-  isNavOpen.value = false;
-  store.dispatch("setIsNavOpen", isNavOpen.value);
-};
-
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;
-
-  store.dispatch("setIsNavOpen", isNavOpen.value);
 };
 </script>
 

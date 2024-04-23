@@ -18,4 +18,8 @@ const mealByIngredient = async ({ commit }, ingredient) => {
   commit("setMealByIngredient", data.meals);
 };
 
-export { searchMeals, mealByLetter, mealByIngredient };
+const setIsNavOpen = ({ commit }, isOpen) => {
+  commit("setNavOpen", isOpen);
+};
+
+export { searchMeals, mealByLetter, mealByIngredient, setIsNavOpen };
