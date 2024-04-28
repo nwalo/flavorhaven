@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Layout from "../layout/index.vue";
+import NotFound from "../views/NotFound.vue";
 import Home from "../views/Home.vue";
 import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByName from "../views/MealsByName.vue";
@@ -51,7 +52,7 @@ const routes = [
       },
       {
         path: "/:pathMatch(.*)*",
-        component: Home,
+        component: NotFound,
       },
     ],
   },
