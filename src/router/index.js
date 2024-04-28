@@ -51,7 +51,6 @@ const routes = [
       },
       {
         path: "/:pathMatch(.*)*",
-        name: "home",
         component: Home,
       },
     ],
