@@ -63,8 +63,6 @@ onMounted(async () => {
     console.log(error);
   }
 });
-
-// onMounted(() => store.dispatch("mealByIngredient", ingredient));
 </script>
 
 <style></style>

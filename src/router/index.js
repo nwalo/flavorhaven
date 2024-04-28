@@ -29,25 +29,38 @@ const routes = [
         component: MealsByName,
       },
       {
-        path: "/ingredients",
-        name: "ingredients",
-        component: MealsByIngredients,
-      },
-      {
-        path: "/ingredients/:ingredient",
-        name: "ingredientDetails",
-        component: IngredientsDetails,
-      },
-      {
         path: "/meal/:id",
         name: "mealDetails",
         component: MealDetails,
+      },
+      {
+        path: "/ingredients",
+        children: [
+          {
+            path: "", // Empty path for /ingredients
+            name: "ingredients",
+            component: MealsByIngredients,
+          },
+          {
+            path: ":ingredient",
+            name: "ingredientDetails",
+            component: IngredientsDetails,
+            props: true,
+          },
+        ],
+      },
+      {
+        path: "/:pathMatch(.*)*",
+        name: "home",
+        component: Home,
       },
     ],
   },
 ];
 
 const router = createRouter({
+  linkActiveClass: "border-purple-500 text-purple-700 border-b-2",
+  // linkExactActiveClass: "border-purple-700 border-b-2",
   history: createWebHistory(),
   routes,
 });

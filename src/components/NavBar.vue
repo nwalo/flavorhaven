@@ -38,7 +38,7 @@
               v-for="(nav, i) in navs"
               :key="i"
               :to="{ name: nav.to }"
-              class="py-2 px-3 text-purple-800 transition-all hover:bg-purple-100 rounded"
+              class="py-2 px-3 text-purple-800 transition-all hover:bg-purple-100"
               >{{ nav.name }}</router-link
             >
           </div>
@@ -54,7 +54,7 @@
           <router-link
             @click="closeNav"
             :to="{ name: nav.to }"
-            class="py-2 px-2 text-purple-800 hover:bg-purple-100 rounded"
+            class="py-2 px-2 text-purple-800 hover:bg-purple-100"
             >{{ nav.name }}</router-link
           >
         </div>
